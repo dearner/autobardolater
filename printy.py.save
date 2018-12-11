@@ -1,0 +1,16 @@
+#!/usr/bin/python
+
+from Adafruit_Thermal import *
+
+printer = Adafruit_Thermal("/dev/serial0", 19200, timeout=5)
+
+with open ("test.txt") as f:
+    
+
+for k in lines:
+    printer.print(k)
+printer.feed(5)
+
+printer.sleep()      # Tell printer to sleep
+printer.wake()       # Call wake() before printing again, even if reset
+printer.setDefault() # Restore printer to defaults
